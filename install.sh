@@ -60,5 +60,6 @@ cp hyprland.lua ~/.config/hypr/hyprland.lua
 # Create fun update checker
 sed -i "s/USER_NAME=\"YOUR_USERNAME\"/USER_NAME=\"$USER\"/" abc4d-update-checker.sh
 sudo cp abc4d-update-checker.sh /usr/local/bin/abc4d-update-checker.sh
+sudo chmod +x /usr/local/bin/abc4d-update-checker.sh
 sudo cp abc4d-update-checker.service /etc/systemd/system/abc4d-update-checker.service
 sudo systemctl daemon-reload
