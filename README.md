@@ -13,11 +13,15 @@ abc4d adheres to these guidelines:
 - nvidia drivers directly from nvidia packaged for debian, this is by far the most stable approach from my experience
 - hyprland, a very competent and configurable window manager
 - noctalia, a set of cohesive desktop tools that work great on top of hyprland
-- a custom built service to notify the user about pending updates via apt and flatpak
 
 ## Current status
 
 Alpha status, not yet tested. Use at your own risk! 
+
+# Assumptions 
+You have a fresh install of Debian Trixie, installed without any graphical environment. You do have network access, and some way to get the contents of this repo onto your machine.
+
+If you have an Nvidia GPU, it is from the 16XX series or newer (if you don't have an Nvidia GPU, then the script won't touch your graphics drivers).
 
 ## Instructions
 
@@ -31,10 +35,6 @@ Noctalia's network UI requires NetworkManager to work, but a basic Debian Trixie
 This script currently looks for Nvidia hardware, and if it finds it, installs the open nvidia drivers. If you have old nvidia hardware (older than the 16XX series) this will not work and will probably bork your system. You have been warned!
 
 
-# Assumptions 
-You have a fresh install of Debian Trixie, installed without any graphical environment. You do have network access, and some way to get the contents of this repo onto your machine.
-
-If you have an Nvidia GPU, it is from the 16XX series or newer (if you don't have an Nvidia GPU, then the script won't touch your graphics drivers).
 
 # Where to go next 
 After a successful installation, you probably want to modify your hyprland config, which is located at `~/.config/hypr/hyprland.lua`. You'll probably want to confirm and modify your keybindings (this script will provide a basic example with some bindings that make sense to me). AI tools like Gemini seem pretty good at generating snippets for Hyprland configuration, but make sure to mention that you're using Lua and not the older conf standard.

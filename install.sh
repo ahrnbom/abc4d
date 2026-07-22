@@ -23,7 +23,8 @@ sudo apt-get update
 # Install hyprland
 sudo apt-get install -y -t trixie-backports hyprland hyprland-guiutils hyprshutdown hyprpolkitagent
 
-# Install Noctalia
+# Install Noctalia 
+# Instructions from https://docs.noctalia.dev/v5/getting-started/installation/?section=debian#debian
 wget https://pkg.noctalia.dev/deb/nickh-archive-keyring.deb && sudo dpkg -i nickh-archive-keyring.deb
 sudo wget -O /etc/apt/sources.list.d/noctalia-trixie.sources https://pkg.noctalia.dev/deb/noctalia-trixie.sources
 sudo apt-get install -y -t trixie-backports noctalia noctalia-greeter
@@ -57,10 +58,7 @@ sudo systemctl restart NetworkManager
 rm -f ~/.config/hypr/hyprland.conf
 cp hyprland.lua ~/.config/hypr/hyprland.lua
 
-# Create fun update checker
-sed -i "s/USER_NAME=\"YOUR_USERNAME\"/USER_NAME=\"$USER\"/" abc4d-update-checker.sh
-sudo cp abc4d-update-checker.sh /usr/local/bin/abc4d-update-checker.sh
-sudo chmod +x /usr/local/bin/abc4d-update-checker.sh
-sudo cp abc4d-update-checker.service /etc/systemd/system/abc4d-update-checker.service
-sudo systemctl daemon-reload
-sudo systemctl enable --now abc4d-update-checker.service
+# Done!
+echo "Installation complete! Rebooting in 10 seconds..."
+sleep 10
+systemctl reboot
