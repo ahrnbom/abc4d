@@ -39,10 +39,10 @@ flatpak install -y org.mozilla.firefox
 sudo apt-get install -y network-manager
 
 # Nuke old network config with warning
-cp /etc/network/interfaces $ABD4D_DIR/old-network-interfaces.bak
+sudo cp /etc/network/interfaces $ABD4D_DIR/old-network-interfaces.bak
 echo "About to nuke your network config... Trust me, it's fine, but you can Ctrl + C to abort"
 sleep 5
-sudo cat << EOF > /etc/network/interfaces
+cat << 'EOF' | sudo tee /etc/network/interfaces > /dev/null
 source /etc/network/interfaces.d/*
 auto lo
 iface lo inet loopback
@@ -54,7 +54,7 @@ sudo systemctl enable --now NetworkManager
 sudo systemctl restart NetworkManager
 
 # Hyprland config
-rm -r ~/.config/hypr/hyprland.conf
+rm -f ~/.config/hypr/hyprland.conf
 cp hyprland.lua ~/.config/hypr/hyprland.lua
 
 # Create fun update checker
@@ -63,3 +63,4 @@ sudo cp abc4d-update-checker.sh /usr/local/bin/abc4d-update-checker.sh
 sudo chmod +x /usr/local/bin/abc4d-update-checker.sh
 sudo cp abc4d-update-checker.service /etc/systemd/system/abc4d-update-checker.service
 sudo systemctl daemon-reload
+sudo systemctl enable --now abc4d-update-checker.service
