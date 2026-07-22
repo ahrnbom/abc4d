@@ -1,0 +1,8 @@
+[Unit]
+Description=Check for APT and Flatpak updates
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/abc4d-update-checker.sh
