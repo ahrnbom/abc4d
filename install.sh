@@ -3,10 +3,10 @@
 set -e
 
 ABD4D_DIR=/etc/abc4d
-sudo mkdir -p $ABD4D_DIR 
+sudo mkdir -p $ABD4D_DIR
 
 # Basic dependencies
-sudo apt install -y linux-kernel-amd64 linux-headers-amd64 extrepo git htop curl nano python3-venv python3-pip fonts-mononoki flatpak
+sudo apt install -y linux-kernel-amd64 linux-headers-amd64 extrepo git htop curl wget nano python3-venv python3-pip fonts-mononoki flatpak kitty pkexec libnotify-bin
 
 # Install nvidia drivers
 if grep -q "0x10de" /sys/bus/pci/devices/*/vendor 2>/dev/null; then
@@ -21,14 +21,19 @@ sudo cp debian-backports.sources /etc/apt/sources.list.d/debian-backports.source
 sudo apt-get update 
 
 # Install hyprland
-sudo apt-get install -y -t trixie-backports hyprland hyprland-guiutils hyprshutdown
+sudo apt-get install -y -t trixie-backports hyprland hyprland-guiutils hyprshutdown hyprpolkitagent
 
 # Install Noctalia
+wget https://pkg.noctalia.dev/deb/nickh-archive-keyring.deb && sudo dpkg -i nickh-archive-keyring.deb
+sudo wget -O /etc/apt/sources.list.d/noctalia-trixie.sources https://pkg.noctalia.dev/deb/noctalia-trixie.sources
 sudo apt-get install -y -t trixie-backports noctalia noctalia-greeter
-sudo cp $PWD/greeter.toml /var/lib/noctalia-greeter/greeter.toml
+sudo cp greeter.toml /var/lib/noctalia-greeter/greeter.toml
 
 # Configure Flathub
-# TODO TODO TODO
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+# Install Firefox
+flatpak install -y org.mozilla.firefox
 
 # Install NetworkManager
 sudo apt-get install -y network-manager
@@ -48,3 +53,6 @@ echo "Old network nuked, backup written to $ABD4D_DIR/old-network-interfaces.bak
 sudo systemctl enable --now NetworkManager
 sudo systemctl restart NetworkManager
 
+# Hyprland config
+rm -r ~/.config/hypr/hyprland.conf
+cp hyprland.lua ~/.config/hypr/hyprland.lua
