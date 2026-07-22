@@ -28,3 +28,17 @@ This script installs Noctalia v5, which (at the time of writing) is still in bet
 Noctalia's network UI requires NetworkManager to work, but a basic Debian Trixie install doesn't have that (at least, it didn't on my machine), instead it uses a very simple network config in `/etc/network/interfaces`. This script nukes those settings, to avoid conflicts with NetworkManager. You may have to e.g. log into your wifi again. If you try to install this over ssh, expect the session to get interrupted.
 
 This script currently looks for Nvidia hardware, and if it finds it, installs the open nvidia drivers. If you have old nvidia hardware (older than the 16XX series) this will not work and will probably bork your system. You have been warned!
+
+
+# Assumptions 
+You have a fresh install of Debian Trixie, installed without any graphical environment. You do have network access, and some way to get the contents of this repo onto your machine.
+
+If you have an Nvidia GPU, it is from the 16XX series or newer (if you don't have an Nvidia GPU, then the script won't touch your graphics drivers).
+
+# Where to go next 
+After a successful installation, you probably want to modify your hyprland config, which is located at `~/.config/hypr/hyprland.lua`. You'll probably want to confirm and modify your keybindings (this script will provide a basic example with some bindings that make sense to me). AI tools like Gemini seem pretty good at generating snippets for Hyprland configuration, but make sure to mention that you're using Lua and not the older conf standard.
+
+The keybinds provided are as follows:
+
+Use Noctalia's UI to configure things like network, bluetooth and audio devices.
+

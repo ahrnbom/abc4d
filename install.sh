@@ -2,8 +2,11 @@
 
 set -e
 
+ABD4D_DIR=/etc/abc4d
+sudo mkdir -p $ABD4D_DIR 
+
 # Basic dependencies
-sudo apt install linux-kernel-amd64 linux-headers-amd64 extrepo git htop curl nano python3-venv python3-pip fonts-mononoki
+sudo apt install -y linux-kernel-amd64 linux-headers-amd64 extrepo git htop curl nano python3-venv python3-pip fonts-mononoki flatpak
 
 # Install nvidia drivers
 if grep -q "0x10de" /sys/bus/pci/devices/*/vendor 2>/dev/null; then
@@ -18,21 +21,30 @@ sudo cp debian-backports.sources /etc/apt/sources.list.d/debian-backports.source
 sudo apt-get update 
 
 # Install hyprland
-sudo apt-get install -y -t trixie-backports hyprland hyprland-guiutils
+sudo apt-get install -y -t trixie-backports hyprland hyprland-guiutils hyprshutdown
 
 # Install Noctalia
-sudo apt-get install -y -t trixie-backports noctalia
+sudo apt-get install -y -t trixie-backports noctalia noctalia-greeter
+sudo cp $PWD/greeter.toml /var/lib/noctalia-greeter/greeter.toml
 
-# Install and configure NetworkManager
+# Configure Flathub
+# TODO TODO TODO
+
+# Install NetworkManager
 sudo apt-get install -y network-manager
+
+# Nuke old network config with warning
+cp /etc/network/interfaces $ABD4D_DIR/old-network-interfaces.bak
 echo "About to nuke your network config... Trust me, it's fine, but you can Ctrl + C to abort"
 sleep 5
-
 sudo cat << EOF > /etc/network/interfaces
 source /etc/network/interfaces.d/*
 auto lo
 iface lo inet loopback
 EOF
+echo "Old network nuked, backup written to $ABD4D_DIR/old-network-interfaces.bak"
 
+# Enable NetworkManager
 sudo systemctl enable --now NetworkManager
 sudo systemctl restart NetworkManager
+
