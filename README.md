@@ -13,6 +13,7 @@ abc4d adheres to these guidelines:
 - nvidia drivers directly from nvidia packaged for debian, this is by far the most stable approach from my experience
 - hyprland, a very competent and configurable window manager
 - noctalia, a set of cohesive desktop tools that work great on top of hyprland
+- a custom built service to notify the user about pending updates via apt and flatpak
 
 ## Current status
 
