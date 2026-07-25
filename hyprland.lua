@@ -145,3 +145,6 @@ hl.monitor({
     position = "auto",
     scale = monitor_scale,
 })
+
+-- HyprMod managed settings
+require("hyprland-gui")

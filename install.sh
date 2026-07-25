@@ -58,6 +58,16 @@ sudo systemctl restart NetworkManager
 rm -f ~/.config/hypr/hyprland.conf
 cp hyprland.lua ~/.config/hypr/hyprland.lua
 
+# Install hyprmod, a graphical application to adjust Hyprland config
+# It has quite a lot of dependencies and it's not currently packaged in 
+# a way that makes it easy to obtain with updates, but it's very useful to have
+# Feel free to not install these things if you don't want it
+sudo apt install pipx libglib2.0-bin python-gi-dev python3-gi-cairo \
+    pkg-config libcairo2-dev libgirepository-2.0-dev python3-dev \
+    gir1.2-adw-1 lua5.4
+pipx install git+https://github.com/BlueManCZ/hyprmod.git
+hyprmod --install
+
 # Done!
 echo "Installation complete! Rebooting in 10 seconds..."
 sleep 10
