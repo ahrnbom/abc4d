@@ -6,7 +6,7 @@ ABD4D_DIR=/etc/abc4d
 sudo mkdir -p $ABD4D_DIR
 
 # Basic dependencies
-sudo apt install -y linux-kernel-amd64 linux-headers-amd64 extrepo git htop curl wget nano python3-venv python3-pip fonts-mononoki flatpak kitty pkexec libnotify-bin
+sudo apt install -y linux-kernel-amd64 linux-headers-amd64 extrepo git htop curl wget nano python3-venv python3-pip fonts-mononoki fonts-noto-color-emoji flatpak kitty pkexec libnotify-bin
 
 # Install nvidia drivers
 if grep -q "0x10de" /sys/bus/pci/devices/*/vendor 2>/dev/null; then
