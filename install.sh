@@ -36,6 +36,9 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 # Install Firefox
 flatpak install -y org.mozilla.firefox
 
+# Install Bazaar
+flatpak install -y io.github.kolunmi.Bazaar
+
 # Install NetworkManager
 sudo apt-get install -y network-manager
 
