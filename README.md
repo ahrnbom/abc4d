@@ -1,7 +1,7 @@
 # abc4d - Another Based Config for Debian
 
 
-If you want to get into tiling window managers but found the learning curve a little too steep, perhaps this project can be of use. abc4d is a setup script that installs a reasonably cohesive tiling desktop using Hyprland and Noctalia. Unlike other, similar projects like (https://github.com/JaKooLit/Debian-Hyprland)[this one], abc4d is much simpler and should Just Work™ (I tried to install the "Kool" one several times before giving up and realizing that it's really stupid and you can achieve a much better result with less effort, and gain a lot of stability as a side bonus, hence the creation of this project).
+If you want to get into tiling window managers but found the learning curve a little too steep, perhaps this project can be of use. abc4d is a setup script that installs a reasonably cohesive tiling desktop using Hyprland and Noctalia. Unlike other, similar projects like [this one](https://github.com/JaKooLit/Debian-Hyprland), abc4d is much simpler and should Just Work™ (I tried to install the "Kool" one several times before giving up and realizing that it's really stupid and you can achieve a much better result with less effort, and gain a lot of stability as a side bonus, hence the creation of this project).
 
 abc4d adheres to these guidelines:
 - one single script, should be easy to read and reason about
