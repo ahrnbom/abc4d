@@ -13,6 +13,9 @@ abc4d adheres to these guidelines:
 - nvidia drivers directly from nvidia packaged for debian, this is by far the most stable approach from my experience
 - hyprland, a very competent and configurable window manager
 - noctalia, a set of cohesive desktop tools that work great on top of hyprland
+- bazaar, a graphical application store
+- hyprmod, a graphical settings app for hyprland
+- kitty, a nice and simple terminal
 
 ## Current status
 
@@ -21,7 +24,7 @@ Alpha status, not yet tested. Use at your own risk!
 # Assumptions 
 You have a fresh install of Debian Trixie, installed without any graphical environment. You do have network access, and some way to get the contents of this repo onto your machine.
 
-If you have an Nvidia GPU, it is from the 16XX series or newer (if you don't have an Nvidia GPU, then the script won't touch your graphics drivers).
+If you have an Nvidia GPU, it is from the 16XX series or newer (if you don't have an Nvidia GPU, then the script won't touch your graphics drivers). If you have an older, unsupported, Nvidia GPU, then do not run this installer please. 
 
 ## Instructions
 
@@ -37,9 +40,7 @@ This script currently looks for Nvidia hardware, and if it finds it, installs th
 
 
 # Where to go next 
-After a successful installation, you probably want to modify your hyprland config, which is located at `~/.config/hypr/hyprland.lua`. You'll probably want to confirm and modify your keybindings (this script will provide a basic example with some bindings that make sense to me). AI tools like Gemini seem pretty good at generating snippets for Hyprland configuration, but make sure to mention that you're using Lua and not the older conf standard.
-
-The keybinds provided are as follows:
+The default keybinds provided are as follows:
 
 | Key    | Action |
 | -------- | ------- |
@@ -56,6 +57,8 @@ The keybinds provided are as follows:
 | Super + M | Toggle the focused window full screen |
 | Drag with four fingers on a touchpad | Switch workspaces |
 | Super + Drag with mouse | Grab and move windows around
+
+You can modify these, and a bunch of other fun settings, inside the hyprmod application. 
 
 Use Noctalia's UI to configure things like network, bluetooth and audio devices.
 

@@ -61,6 +61,9 @@ sudo systemctl restart NetworkManager
 rm -f ~/.config/hypr/hyprland.conf
 cp hyprland.lua ~/.config/hypr/hyprland.lua
 
+# Kitty config
+cp kitty.conf ~/.config/kitty/kitty.conf
+
 # Install hyprmod, a graphical application to adjust Hyprland config
 # It has quite a lot of dependencies and it's not currently packaged in 
 # a way that makes it easy to obtain with updates, but it's very useful to have
