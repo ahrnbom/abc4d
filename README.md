@@ -42,23 +42,22 @@ This script currently looks for Nvidia hardware, and if it finds it, installs th
 # Where to go next 
 The default keybinds provided are as follows:
 
-| Key    | Action |
-| -------- | ------- |
-| Super + Arrows  | Focus on a different window |
-| Super + Shift + Arrows | Move window on current workspace |
-| Ctrl + Alt + Arrows | Move to different workspace vertically |
-| Ctrl + Alt + Shift + Arrows | Move current window to different workspace vertically |
-| Super + L | Lock screen |
-| Super + T | Open a terminal |
-| Super + F | Open Firefox |
-| Super + Q | Quit the focused application |
-| Super + Space | Open a launcher where you can search for applications to launch |
-| Super + V | Toggle the focused window between floating and tiled |
-| Super + M | Toggle the focused window full screen |
-| Drag with four fingers on a touchpad | Switch workspaces |
-| Super + Drag with mouse | Grab and move windows around
+| Key                                  | Action                                                          |
+| ------------------------------------ | --------------------------------------------------------------- |
+| Super + Arrows                       | Focus on a different window                                     |
+| Super + Shift + Arrows               | Move window on current workspace                                |
+| Ctrl + Alt + Arrows                  | Move to different workspace vertically                          |
+| Ctrl + Alt + Shift + Arrows          | Move current window to different workspace vertically           |
+| Super + L                            | Lock screen                                                     |
+| Super + T                            | Open a terminal                                                 |
+| Super + F                            | Open Firefox                                                    |
+| Super + Q                            | Quit the focused application                                    |
+| Super + Space                        | Open a launcher where you can search for applications to launch |
+| Super + V                            | Toggle the focused window between floating and tiled            |
+| Super + M                            | Toggle the focused window full screen                           |
+| Drag with four fingers on a touchpad | Switch workspaces                                               |
+| Super + Drag with mouse              | Grab and move windows around                                    |
 
 You can modify these, and a bunch of other fun settings, inside the hyprmod application. 
 
 Use Noctalia's UI to configure things like network, bluetooth and audio devices.
-
