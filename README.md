@@ -1,13 +1,13 @@
 # abc4d - Another Based Config for Debian
 
 
-If you want to get into tiling window managers but found the learning curve a little too steep, perhaps this project can be of use. abc4d is a setup script that installs a reasonably cohesive tiling desktop using Hyprland and Noctalia. Unlike other, similar projects like (https://github.com/JaKooLit/Debian-Hyprland)[this one], abc4d is much simpler and should Just Work™ (I tried to install the "Kool" one several times before giving up and realizing that it's really stupid and you can achieve a much better result with less effort, and gain a lot of stability as a side bonus, hence the creation of this project).
+If you want to get into tiling window managers but found the learning curve a little too steep, perhaps this project can be of use. abc4d is a setup script that installs a reasonably cohesive tiling desktop using Hyprland and Noctalia. Unlike other, similar projects like [this one](https://github.com/JaKooLit/Debian-Hyprland), abc4d is much simpler and should Just Work™ (I tried to install the "Kool" one several times before giving up and realizing that it's really stupid and you can achieve a much better result with less effort, and gain a lot of stability as a side bonus, hence the creation of this project).
 
 abc4d adheres to these guidelines:
 - one single script, should be easy to read and reason about
-- simple installations only, if something requires many lines to do, then it's probably not the right way to do it 
-- don't do exactly everything, the user is not stupid and can configure a few things after installation, this can still be a helpful tool to get people started and we can provide some guidance on where to go next 
-- limit control flow and branching to the absolute essentials, we don't need the complexity and you're not stupid, you can comment out stuff or shuffle things around if you need to re-run a specific step or whatever 
+- simple installations only, if something requires many lines to do, then it's probably not the right way to do it
+- don't do exactly everything, the user is not stupid and can configure a few things after installation, this can still be a helpful tool to get people started and we can provide some guidance on where to go next
+- limit control flow and branching to the absolute essentials, we don't need the complexity and you're not stupid, you can comment out stuff or shuffle things around if you need to re-run a specific step or whatever
 
 ## What gets installed
 - nvidia drivers directly from nvidia packaged for debian, this is by far the most stable approach from my experience
@@ -19,9 +19,9 @@ abc4d adheres to these guidelines:
 
 ## Current status
 
-Alpha status, not yet tested. Use at your own risk! 
+Alpha status, not yet tested. Use at your own risk!
 
-# Assumptions 
+# Assumptions
 You have a fresh install of Debian Trixie, installed without any graphical environment. You do have network access, and some way to get the contents of this repo onto your machine.
 
 If you have an Nvidia GPU, it is from the 16XX series or newer (if you don't have an Nvidia GPU, then the script won't touch your graphics drivers). If you have an older, unsupported, Nvidia GPU, then do not run this installer please. 
@@ -42,23 +42,22 @@ This script currently looks for Nvidia hardware, and if it finds it, installs th
 # Where to go next 
 The default keybinds provided are as follows:
 
-| Key    | Action |
-| -------- | ------- |
-| Super + Arrows  | Focus on a different window |
-| Super + Shift + Arrows | Move window on current workspace |
-| Ctrl + Alt + Arrows | Move to different workspace vertically |
-| Ctrl + Alt + Shift + Arrows | Move current window to different workspace vertically |
-| Super + L | Lock screen |
-| Super + T | Open a terminal |
-| Super + F | Open Firefox |
-| Super + Q | Quit the focused application |
-| Super + Space | Open a launcher where you can search for applications to launch |
-| Super + V | Toggle the focused window between floating and tiled |
-| Super + M | Toggle the focused window full screen |
-| Drag with four fingers on a touchpad | Switch workspaces |
-| Super + Drag with mouse | Grab and move windows around
+| Key                                  | Action                                                          |
+| ------------------------------------ | --------------------------------------------------------------- |
+| Super + Arrows                       | Focus on a different window                                     |
+| Super + Shift + Arrows               | Move window on current workspace                                |
+| Ctrl + Alt + Arrows                  | Move to different workspace vertically                          |
+| Ctrl + Alt + Shift + Arrows          | Move current window to different workspace vertically           |
+| Super + L                            | Lock screen                                                     |
+| Super + T                            | Open a terminal                                                 |
+| Super + F                            | Open Firefox                                                    |
+| Super + Q                            | Quit the focused application                                    |
+| Super + Space                        | Open a launcher where you can search for applications to launch |
+| Super + V                            | Toggle the focused window between floating and tiled            |
+| Super + M                            | Toggle the focused window full screen                           |
+| Drag with four fingers on a touchpad | Switch workspaces                                               |
+| Super + Drag with mouse              | Grab and move windows around                                    |
 
 You can modify these, and a bunch of other fun settings, inside the hyprmod application. 
 
 Use Noctalia's UI to configure things like network, bluetooth and audio devices.
-
