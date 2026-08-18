@@ -6,7 +6,7 @@ ABD4D_DIR=/etc/abc4d
 sudo mkdir -p $ABD4D_DIR
 
 # Basic dependencies
-sudo apt install -y linux-kernel-amd64 linux-headers-amd64 extrepo git htop curl wget nano python3-venv python3-pip fonts-mononoki fonts-noto-color-emoji flatpak kitty pkexec libnotify-bin
+sudo apt install -y linux-kernel-amd64 linux-headers-amd64 extrepo git htop curl wget nano python3-venv python3-pip fonts-mononoki fonts-noto-color-emoji flatpak kitty pkexec libnotify-bin pipx
 
 # Install nvidia drivers
 if grep -q "0x10de" /sys/bus/pci/devices/*/vendor 2>/dev/null; then
@@ -65,10 +65,11 @@ cp hyprland.lua ~/.config/hypr/hyprland.lua
 cp kitty.conf ~/.config/kitty/kitty.conf
 
 # Ensure bluetooth audio works properly
-sudo apt install -t trixie-backports pipx libspa-0.2-bluetooth pipewire-audio
+sudo apt install -t trixie-backports libspa-0.2-bluetooth pipewire-audio
 
 # Install hyprland-settings-tui
 pipx install git+https://github.com/ahrnbom/hyprland-settings-tui.git
+hyprland-settings-tui --create-application-shortcut
 
 # Done!
 echo "Installation complete! Rebooting in 10 seconds..."

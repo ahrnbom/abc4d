@@ -6,7 +6,6 @@ local thirdMod = "CTRL + ALT" -- e.g. "MOD5"
 local keyboard_layout = "us" -- e.g. "se"
 local keyboard_variant = nil -- e.g. "nodeadkeys"
 local keyboard_options = nil -- e.g. "lv3:caps_switch"
-local monitor_scale = 1.0
 local focus_color = "#7c95e6"
 
 local terminal = "kitty"
@@ -138,13 +137,3 @@ hl.layer_rule({
 hl.on("hyprland.start", function()
     hl.exec_cmd("noctalia")
 end)
-
-hl.monitor({
-    output = "",
-    mode = "preferred",
-    position = "auto",
-    scale = monitor_scale,
-})
-
--- HyprMod managed settings
-require("hyprland-gui")
